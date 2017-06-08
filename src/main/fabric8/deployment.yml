@@ -1,0 +1,21 @@
+spec:
+  template:
+    spec:
+      containers:
+        - 
+          resources:
+            requests:
+              cpu: "0.2"
+#              memory: 256Mi
+            limits:
+              cpu: "1.0"
+#              memory: 256Mi
+          env:
+            # Define the environment variable
+          - name: SPECIAL_LEVEL_KEY
+            valueFrom:
+              configMapKeyRef:
+                # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
+                name: special-config
+                # Specify the key associated with the value
+                key: special.how
